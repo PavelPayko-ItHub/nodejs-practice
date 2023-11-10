@@ -6,26 +6,12 @@ require('dotenv').config();
 
 const keywords = {
     'cat': ['http://127.0.0.1:80/download'],
-    'dog': ['https://images.pexels.com/photos/3104709/pexels-photo-3104709.jpeg', 
-            'https://images.pexels.com/photos/3196887/pexels-photo-3196887.jpeg', 
-            'https://images.pexels.com/photos/14666143/pexels-photo-14666143.jpeg'],
-    'bird': ['https://images.pexels.com/photos/2662434/pexels-photo-2662434.jpeg', 
-            'https://images.pexels.com/photos/2115984/pexels-photo-2115984.jpeg', 
-            'https://images.pexels.com/photos/3250454/pexels-photo-3250454.jpeg'],    
-  // Другие ключевые слова с соответствующими URL
+    'dog': [],
+    'bird': [],    
 };
 
 const MAX_CONCURRENT_THREADS = process.env.MAX_CONCURRENT_THREADS || 1; 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8080; 
-// console.log('process.env - ', process.env);
-// fs.readFile('config.txt', 'utf8', function(err, data) {
-//   if (!err) {
-//     MAX_CONCURRENT_THREADS = Number(data);
-//     console.log('MAX_CONCURRENT_THREADS set to', MAX_CONCURRENT_THREADS);
-//   } else {
-//     console.error('Failed to read config.txt:', err);
-//   }
-// }); 
 
 const server = new WebSocket.Server({ port: PORT });
 
